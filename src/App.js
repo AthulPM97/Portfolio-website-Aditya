@@ -5,13 +5,15 @@ import Navigation from "./components/UI/Navigation";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import WorksPage from "./pages/WorksPage";
+import './fonts.css';
+import SketchCards from "./components/sketches/SketchCards";
 
 function App() {
   return (
     <div>
       <Container style={{ textAlign: "center" }}>
         <br />
-        <h1>Hello Aditya</h1>
+        <h1 style={{fontFamily:"oliver"}}>Aditya Narayan</h1>
         <Navigation />
       </Container>
       <Switch>
@@ -23,6 +25,9 @@ function App() {
         </Route>
         <Route path='/about'>
           <AboutPage/>
+        </Route>
+        <Route path='/sketches'>
+          <SketchCards/>
         </Route>
       </Switch>
     </div>
