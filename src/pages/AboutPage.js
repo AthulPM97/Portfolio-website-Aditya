@@ -1,16 +1,16 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Container, Image, Row } from "react-bootstrap";
 
 const AboutPage = () => {
   return (
     <Container>
       <Row>
-        <Col>
           <Image
             src="https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/0bf183cd60d66bddc13b48d84e6f353f.jpg"
             fluid
           />
-        </Col>
-        <Col>
+        </Row>
+        <br/>
+        <Row>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -22,7 +22,6 @@ const AboutPage = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-        </Col>
       </Row>
     </Container>
   );
