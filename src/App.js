@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import WorksPage from "./pages/WorksPage";
 import './fonts.css';
 import SketchCards from "./components/sketches/SketchCards";
+import Footer from "./components/UI/Footer";
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
           <SketchCards/>
         </Route>
       </Switch>
+      <br/>
+      <Footer/>
     </div>
   );
 }

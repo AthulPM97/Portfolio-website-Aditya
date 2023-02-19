@@ -1,0 +1,11 @@
+Install all dependencies from here:
+https://fontawesome.com/v6/docs/web/use-with/react/
+
+import like this:
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBehance, faLinkedin, faInstagram, } from '@fortawesome/free-brands-svg-icons';
+
+use like this:
+<a href="https://www.facebook.com">
+    <FontAwesomeIcon icon={faBehance} />
+</a>
