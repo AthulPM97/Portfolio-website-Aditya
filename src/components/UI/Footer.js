@@ -21,7 +21,6 @@ const Footer = () => {
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
       </div>
-      <p>Copyright © 2023</p>
     </footer>
   );
 };
