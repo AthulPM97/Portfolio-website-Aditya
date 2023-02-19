@@ -8,15 +8,16 @@ import WorksPage from "./pages/WorksPage";
 import './fonts.css';
 import SketchCards from "./components/sketches/SketchCards";
 import Footer from "./components/UI/Footer";
-
+import './App.css';
 function App() {
   return (
-    <div>
+    <div >
       <Container style={{ textAlign: "center" }}>
         <br />
         <h1 style={{fontFamily:"oliver"}}>Aditya Narayan</h1>
         <Navigation />
       </Container>
+      <div className="content">
       <Switch>
         <Route path="/" exact>
           <HomePage />
@@ -31,6 +32,7 @@ function App() {
           <SketchCards/>
         </Route>
       </Switch>
+      </div>
       <br/>
       <Footer/>
     </div>
