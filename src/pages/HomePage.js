@@ -3,7 +3,7 @@ import { Container, Image } from "react-bootstrap";
 const HomePage = () => {
     return (
         <Container style={{textAlign:'center'}} >
-            <Image src="https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/0bf183cd60d66bddc13b48d84e6f353f.jpg" fluid/>
+            <Image src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e56745161551993.63c7199707a86.jpg" fluid/>
         </Container>
     )
 }

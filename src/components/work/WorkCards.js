@@ -7,10 +7,10 @@ const WorkCards = () => {
     <Container>
         <Row>
             <Col>
-                <WorkCard imageSource="https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/0bf183cd60d66bddc13b48d84e6f353f.jpg"/>
+                <WorkCard imageSource="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a5b60c163055115.63dfe3f102491.jpg"/>
             </Col>
             <Col>
-                <WorkCard imageSource="https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/0bf183cd60d66bddc13b48d84e6f353f.jpg"/>
+                <WorkCard imageSource="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4e99c7157017157.6371daee55621.jpg"/>
             </Col>
         </Row>
     </Container>
