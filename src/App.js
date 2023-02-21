@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import { Switch } from "react-router";
 import { Route } from "react-router-dom";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import Navigation from "./components/UI/Navigation";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
@@ -10,12 +10,12 @@ import SketchCards from "./components/sketches/SketchCards";
 import Footer from "./components/UI/Footer";
 import "./fonts.css";
 import "./App.css";
-import fetchBehanceImages from "./behanceScraper/ImageScraper";
+// import fetchBehanceImages from "./behanceScraper/ImageScraper";
 
 function App() {
-  useEffect(() => {
-    fetchBehanceImages();
-  });
+  // useEffect(() => {
+  //   fetchBehanceImages();
+  // });
   return (
     <div>
       <Container style={{ textAlign: "center" }}>

@@ -1,0 +1,8 @@
+To view images from google drive, make the image 'viewable by anyone with link' and get the link.
+You will get the FILE_ID from the shareable link:
+https://drive.google.com/file/d/1Iuh1bebS9P4gQf8pBHZ3QljSnbjyGpmf/view?usp=share_link
+
+fileId is 1Iuh1bebS9P4gQf8pBHZ3QljSnbjyGpmf
+
+Use the id in this link to get the isolated image as .jpg, .png etc
+https://drive.google.com/uc?id=[FILE_ID]
