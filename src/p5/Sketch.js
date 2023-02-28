@@ -2,6 +2,7 @@ import p5 from "p5";
 import React from "react";
 
 const sketch = (p) => {
+  let bubbles = [];
   p.setup = () => {
     const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
     canvas.position(0, 0);
@@ -10,7 +11,41 @@ const sketch = (p) => {
 
   p.draw = () => {
     p.background(220);
-    p.ellipse(p.mouseX, p.mouseY, 50, 50);
+    // p.ellipse(p.mouseX, p.mouseY, 50, 50);
+    for (let i = 0; i < bubbles.length; i++) {
+      bubbles[i].move();
+      bubbles[i].display();
+  
+      // Check if bubble is off screen
+      if (bubbles[i].y < -bubbles[i].r) {
+        bubbles.splice(i, 1);
+      }
+    }
+  
+    // Add new bubble every 30 frames
+    if (p.frameCount % 30 === 0) {
+      bubbles.push(new Bubble(p.random(p.windowWidth), p.windowHeight, p.random(10, 50)));
+    }
+  }
+  
+  class Bubble {
+    constructor(x, y, r) {
+      this.x = x;
+      this.y = y;
+      this.r = r;
+      this.speed = p.random(1, 3);
+    }
+  
+    move() {
+      this.y -= this.speed;
+    }
+  
+    display() {
+      p.stroke(0);
+      p.strokeWeight(2);
+      p.noFill();
+      p.ellipse(this.x, this.y, this.r * 2);
+    }
   };
 };
 
