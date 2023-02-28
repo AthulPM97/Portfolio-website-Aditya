@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^12.5.0",
     "bootstrap": "^5.2.3",
     "cheerio": "^1.0.0-rc.12",
+    "p5": "^1.6.0",
     "react": "^18.0.0",
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.0.0",

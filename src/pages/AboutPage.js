@@ -1,4 +1,5 @@
 import { Container, Image, Row } from "react-bootstrap";
+import Sketch from "../p5/Sketch";
 
 const AboutPage = () => {
   return (
@@ -22,6 +23,9 @@ const AboutPage = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
+      </Row>
+      <Row>
+        <Sketch/>
       </Row>
     </Container>
   );
