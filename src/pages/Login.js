@@ -1,10 +1,16 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import AuthContext from "../store/auth-context";
+
+import key from '../protected/api-key';
 
 const Login = () => {
   //refs
   const enteredEmail = useRef();
   const enteredPassword = useRef();
+
+  //store
+  const authCtx = useContext(AuthContext);
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -14,7 +20,26 @@ const Login = () => {
         returnSecureToken: true,
     };
 
-    console.log(enteredCreds);
+    const sendRequest = async () => {
+        try{
+            const response = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${key}`, {
+                method: "POST",
+                headers: {
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify({
+                    ...enteredCreds,
+                })
+            });
+            const data = await response.json();
+            console.log('logged in');
+            authCtx.login(data.idToken);
+        } catch(err) {
+            console.log('Error logging in: '+ err.message);
+        }
+    }
+    sendRequest();
+
   };
   return (
     <div>

@@ -11,9 +11,14 @@ import Admin from "./pages/Admin";
 import "./fonts.css";
 import "./App.css";
 import Login from "./pages/Login";
+import { useContext } from "react";
+import AuthContext from "./store/auth-context";
 
 function App() {
-  const isLoggedIn = false;
+  //store
+  const authCtx = useContext(AuthContext);
+  const isLoggedIn = authCtx.isLoggedIn;
+
   return (
     <div>
       <Container style={{ textAlign: "center" }}>
