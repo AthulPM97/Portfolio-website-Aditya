@@ -4,6 +4,7 @@ import Sketch from "../p5/Sketch";
 const AboutPage = () => {
   return (
     <Container>
+      <Sketch/>
       <Row>
           <Image
             src="https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,pg_1,q_60,w_1600/0bf183cd60d66bddc13b48d84e6f353f.jpg"
@@ -23,9 +24,6 @@ const AboutPage = () => {
             and more recently with desktop publishing software like Aldus
             PageMaker including versions of Lorem Ipsum.
           </p>
-      </Row>
-      <Row>
-        <Sketch/>
       </Row>
     </Container>
   );

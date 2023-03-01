@@ -1,21 +1,19 @@
 import { Container } from "react-bootstrap";
 import { Switch } from "react-router";
 import { Route } from "react-router-dom";
-// import { useEffect } from "react";
 import Navigation from "./components/UI/Navigation";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import WorksPage from "./pages/WorksPage";
 import SketchCards from "./components/sketches/SketchCards";
 import Footer from "./components/UI/Footer";
+import Admin from "./pages/Admin";
 import "./fonts.css";
 import "./App.css";
-// import fetchBehanceImages from "./behanceScraper/ImageScraper";
+import Login from "./pages/Login";
 
 function App() {
-  // useEffect(() => {
-  //   fetchBehanceImages();
-  // });
+  const isLoggedIn = false;
   return (
     <div>
       <Container style={{ textAlign: "center" }}>
@@ -36,6 +34,10 @@ function App() {
           </Route>
           <Route path="/sketches">
             <SketchCards />
+          </Route>
+          <Route path="/admin" exact>
+            {isLoggedIn && <Admin />}
+            {!isLoggedIn && <Login/>}
           </Route>
         </Switch>
       </div>
