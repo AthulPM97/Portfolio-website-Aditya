@@ -10,21 +10,21 @@ const AuthContext = createContext({
 export default AuthContext;
 
 export const AuthProvider = (props) => {
+  //states
+  const [token, setToken] = useState(localStorage.getItem("token") || "");
 
-    //states 
-    const [token, setToken] = useState('');
-    
-    const userIsLoggedIn = !!token;
+  const userIsLoggedIn = !!token;
 
-    //handlers
-    const loginHandler = (token) => {
-        setToken(() => token);
-        localStorage.setItem('token', token);
-    }
+  //handlers
+  const loginHandler = (token) => {
+    setToken(() => token);
+    localStorage.setItem("token", token);
+  };
 
-    const logoutHandler = () => {
-
-    }
+  const logoutHandler = () => {
+    setToken(() => "");
+    localStorage.removeItem("token");
+  };
 
   const authContext = {
     token: token,
