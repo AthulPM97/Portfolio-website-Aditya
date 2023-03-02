@@ -10,7 +10,7 @@ const sketch = (p) => {
   };
 
   p.draw = () => {
-    p.background(220);
+    p.background(255);
     // p.ellipse(p.mouseX, p.mouseY, 50, 50);
     for (let i = 0; i < bubbles.length; i++) {
       bubbles[i].move();
