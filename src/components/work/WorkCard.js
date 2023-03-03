@@ -3,11 +3,10 @@ import { Card } from "react-bootstrap";
 const WorkCard = (props) => {
   return (
     <Card>
-      <Card.Img variant="top" src={props.imageSource} alt='an image'/>
+      <Card.Img variant="top" src={props.url} alt='an image'/>
       <Card.Body>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {props.description}
         </Card.Text>
       </Card.Body>
     </Card>

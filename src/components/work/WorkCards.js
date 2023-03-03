@@ -1,18 +1,21 @@
+import { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import ContentContext from "../../store/content-context";
 import WorkCard from "./WorkCard";
 
 const WorkCards = () => {
-  
+  const contentCtx = useContext(ContentContext);
+
+  const works = contentCtx.work.map((work) => {
+    return (
+      <Col key={work.id}>
+        <WorkCard url={work.url} description={work.description} key={work.id}/>
+      </Col>
+    );
+  });
   return (
     <Container>
-        <Row>
-            <Col>
-                <WorkCard imageSource="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a5b60c163055115.63dfe3f102491.jpg"/>
-            </Col>
-            <Col>
-                <WorkCard imageSource="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/4e99c7157017157.6371daee55621.jpg"/>
-            </Col>
-        </Row>
+      <Row>{works}</Row>
     </Container>
   );
 };

@@ -10,10 +10,12 @@ const ContentContext = React.createContext({
 export default ContentContext;
 
 export const ContentProvider = (props) => {
+  //custom hook
   const { error, sendRequest } = useHttp();
-
+  //states
   const [work, setWork] = useState([]);
 
+  //side effects
   useEffect(() => {
     sendRequest(
       { url: "https://aditya-design-default-rtdb.firebaseio.com/work.json" },
@@ -30,11 +32,14 @@ export const ContentProvider = (props) => {
         setWork(() => workArray);
       }
     );
-    if(error) console.log(error);
-  }, []);
+    if (error) console.log(error);
+  },[]);
+
+  
   const contentContext = {
     work: work,
   };
+
   return (
     <ContentContext.Provider value={contentContext}>
       {props.children}
