@@ -1,7 +1,11 @@
 import { useRef } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import useHttp from "../../Hooks/use-http";
 
 const AddImage = () => {
+  //custom hook
+  const { error, sendRequest } = useHttp();
+
   //refs
   const enteredUrl = useRef();
   const enteredDescription = useRef();
@@ -14,6 +18,20 @@ const AddImage = () => {
       description: enteredDescription.current.value,
     };
     console.log(workDetails);
+    sendRequest(
+      {
+        method: "POST",
+        url: 'https://aditya-design-default-rtdb.firebaseio.com/work.json',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: workDetails,
+      },
+      (data) => {
+        console.log(data);
+      }
+    );
+    if (error) console.log(error);
   };
   return (
     <Row>

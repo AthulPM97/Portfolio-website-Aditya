@@ -9,12 +9,15 @@ import "bootstrap/dist/css/bootstrap.css";
 
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./store/auth-context";
+import { ContentProvider } from "./store/content-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <AuthProvider>
-      <App />
+      <ContentProvider>
+        <App />
+      </ContentProvider>
     </AuthProvider>
   </BrowserRouter>
 );
