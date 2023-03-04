@@ -13,6 +13,7 @@ const AddImage = () => {
   //handlers
   const addWorkHandler = (event) => {
     event.preventDefault();
+    alert('Adding image... Please wait.');
     const workDetails = {
       url: enteredUrl.current.value,
       description: enteredDescription.current.value,
@@ -21,13 +22,13 @@ const AddImage = () => {
     sendRequest(
       {
         method: "POST",
-        url: 'https://aditya-design-default-rtdb.firebaseio.com/work.json',
-        headers: {
-          "Content-Type": "application/json",
-        },
+        url: "https://aditya-design-default-rtdb.firebaseio.com/work.json",
         body: workDetails,
       },
       (data) => {
+        alert('Image added!');
+        enteredUrl.current.value = '';
+        enteredDescription.current.value = '';
         console.log(data);
       }
     );

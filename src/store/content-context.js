@@ -18,7 +18,9 @@ export const ContentProvider = (props) => {
   //side effects
   useEffect(() => {
     sendRequest(
-      { url: "https://aditya-design-default-rtdb.firebaseio.com/work.json" },
+      {
+        url: "https://aditya-design-default-rtdb.firebaseio.com/work.json",
+      },
       (data) => {
         const keys = Object.keys(data);
         let workArray = [];
@@ -33,9 +35,8 @@ export const ContentProvider = (props) => {
       }
     );
     if (error) console.log(error);
-  },[]);
+  }, []);
 
-  
   const contentContext = {
     work: work,
   };
