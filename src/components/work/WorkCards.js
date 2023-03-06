@@ -15,7 +15,7 @@ const WorkCards = () => {
   });
   return (
     <Container>
-      <Row lg={4} md={4}>{works}</Row>
+      <Row lg={4} md={2} xs={1}>{works}</Row>
     </Container>
   );
 };
