@@ -9,7 +9,6 @@ import SketchCards from "./components/sketches/SketchCards";
 import Footer from "./components/UI/Footer";
 import Admin from "./pages/Admin";
 import "./fonts.css";
-import "./App.css";
 import Login from "./pages/Login";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
@@ -26,7 +25,7 @@ function App() {
         <h1 style={{ fontFamily: "oliver" }}>Aditya Narayan</h1>
         <Navigation />
       </Container>
-      <div className="content">
+      <div style={{marginBottom:'60px'}}>
         <Switch>
           <Route path="/" exact>
             <HomePage />

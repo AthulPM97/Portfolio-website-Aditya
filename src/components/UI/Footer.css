@@ -3,6 +3,9 @@
   color: #fff;
   padding: 20px;
   text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 .social-icons a {

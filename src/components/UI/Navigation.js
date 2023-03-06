@@ -18,7 +18,7 @@ const Navigation = () => {
 
   return (
     <Row className="m-2">
-      <Col>
+      <Col xs={12} style={{flexWrap:'nowrap'}}>
         <Nav variant="pills" className="justify-content-center">
           <Nav.Item>
             <Nav.Link href="/" active={location.pathname === '/'}>Home</Nav.Link>
@@ -26,9 +26,9 @@ const Navigation = () => {
           <Nav.Item>
             <Nav.Link href="/work" active={location.pathname === '/work'}>Work</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Nav.Link href="/sketches" active={location.pathname === '/sketches'}>Sketches</Nav.Link>
-          </Nav.Item>
+          </Nav.Item> */}
           <Nav.Item>
             <Nav.Link href="/about" active={location.pathname === '/about'}>About</Nav.Link>
           </Nav.Item>
