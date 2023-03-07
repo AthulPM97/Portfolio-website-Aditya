@@ -19,7 +19,7 @@ function App() {
   const isLoggedIn = authCtx.isLoggedIn;
 
   return (
-    <div>
+    <div id='app-root'>
       <Container style={{ textAlign: "center" }}>
         <br />
         <h1 style={{ fontFamily: "oliver" }}>Aditya Narayan</h1>

@@ -4,30 +4,35 @@ import React from "react";
 const sketch = (p) => {
   let bubbles = [];
   p.setup = () => {
-    const canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+    const parent = document.getElementById("app-root");
+    const parentWidth = parent.offsetWidth;
+
+    const canvas = p.createCanvas(parentWidth, p.windowHeight);
+
     canvas.position(0, 0);
     canvas.style("z-index", "-1");
   };
 
   p.draw = () => {
     p.background(255);
-    // p.ellipse(p.mouseX, p.mouseY, 50, 50);
     for (let i = 0; i < bubbles.length; i++) {
       bubbles[i].move();
       bubbles[i].display();
-  
+
       // Check if bubble is off screen
       if (bubbles[i].y < -bubbles[i].r) {
         bubbles.splice(i, 1);
       }
     }
-  
+
     // Add new bubble every 30 frames
     if (p.frameCount % 30 === 0) {
-      bubbles.push(new Bubble(p.random(p.windowWidth), p.windowHeight, p.random(10, 50)));
+      bubbles.push(
+        new Bubble(p.random(p.windowWidth), p.windowHeight, p.random(10, 50))
+      );
     }
-  }
-  
+  };
+
   class Bubble {
     constructor(x, y, r) {
       this.x = x;
@@ -35,18 +40,18 @@ const sketch = (p) => {
       this.r = r;
       this.speed = p.random(1, 3);
     }
-  
+
     move() {
       this.y -= this.speed;
     }
-  
+
     display() {
       p.stroke(0);
       p.strokeWeight(2);
       p.noFill();
       p.ellipse(this.x, this.y, this.r * 2);
     }
-  };
+  }
 };
 
 export default function Sketch() {
@@ -55,23 +60,5 @@ export default function Sketch() {
 
 // Wrapper component
 function SketchWrapper({ sketch }) {
-  // const canvasRef = React.useRef(null);
-
-  // React.useEffect(() => {
-  //   new p5(sketch, canvasRef.current);
-  // }, [sketch]);
-
-  // return (
-  //   <div
-  //     style={{
-  //       display: "flex",
-  //       justifyContent: "center",
-  //       alignItems: "center",
-  //       height: "100vh",
-  //     }}
-  //   >
-  //     <div ref={canvasRef} />
-  //   </div>
-  // );
   return <div ref={(ref) => new p5(sketch, ref)} />;
 }
