@@ -12,6 +12,7 @@ import "./fonts.css";
 import Login from "./pages/Login";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
+import WorkDetails from "./components/work/WorkDetails";
 
 function App() {
   //store
@@ -30,8 +31,11 @@ function App() {
           <Route path="/" exact>
             <HomePage />
           </Route>
-          <Route path="/work">
+          <Route path="/work" exact>
             <WorksPage />
+          </Route>
+          <Route path="/work/:workId">
+            <WorkDetails/>
           </Route>
           <Route path="/about">
             <AboutPage />
