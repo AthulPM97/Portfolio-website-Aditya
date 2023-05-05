@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import useHttp from "../Hooks/use-http";
 
 const ContentContext = React.createContext({
@@ -8,12 +8,23 @@ const ContentContext = React.createContext({
 });
 
 export default ContentContext;
+const initialContentState = {
+  work: [],
+  sketches: []
+}
+
+const contentReducer = (state, action) => {
+  return initialContentState;
+}
 
 export const ContentProvider = (props) => {
   //custom hook
   const { error, sendRequest } = useHttp();
   //states
   const [work, setWork] = useState([]);
+
+  
+  const [contentState, dispatchContentAction] = useReducer(contentReducer, initialContentState);
 
   //side effects
   useEffect(() => {
