@@ -8,6 +8,7 @@ const ContentContext = React.createContext({
 });
 
 export default ContentContext;
+
 const initialContentState = {
   work: [],
   sketches: []
